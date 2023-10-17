@@ -1,0 +1,9 @@
+mw_tip
+id: integer, primary key
+title: varchar
+content: text
+photo: image
+time_create: DateTime
+time_update: DataTime
+is_published: Boolean
+

@@ -1,0 +1,28 @@
+
+
+{% extends 'mw_info/base.html' %}
+
+{% block content %}
+<h1> {{ title }} </h1>
+<p> bosh sahifa mundarijasi </p>
+<ul class="list-articles">
+    {% for p in posts %}
+    <li>
+        <div class = 'article-panel'>
+            <p class="first"> Kategoriya: {{p.cat}}</p>
+            <p class="last"> sana: {{p.time_update}}</p>
+        </div>
+        <!-- rasmni qo'yish uchun -->
+        {% if p.photo %}
+            <p><img class="img-article-left thumb" src="{{p.photo.url}}"></p>
+        {% endif %}
+
+        <h2>{{p.title}}</h2>
+        <p>{{p.content}}</p>
+        <div class="clear"></div>
+        <p class="link-read-post"><a href="{{ p.get_absolute_url }} ">postni o`qish</a></p>
+        <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

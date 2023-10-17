@@ -1,0 +1,16 @@
+ {% for cat in cats %}
+    {% if cat.pk == cat_selected %}
+        <li class="selected">{{cat.name}}</li>
+    {% else %}
+        <li><a href="{{ cat.get_absolute_url }}">{{cat.name}}</a></li>
+    {% endif%}
+ {% endfor%}
+
+
+ {% for m in menu %}
+    {% if not forloop.last %}
+        <li> <a href = '{% url m.url_name %}'> {{m.title}}</a></li>
+    {% else %}
+        <li class = "last"> <a href = '{% url m.url_name %}'> {{m.title}}</a></li>
+    {% endif %}
+{% endfor %}
