@@ -24,7 +24,7 @@ def show_category(request, cat_id):
     posts = MwInfo.objects.filter(cat_id =cat_id)
     context = {
         'posts': posts,
-        'title': 'Bo`lim bo`yicha ko`rsatish',
+        'title': 'bu Bo`lim bo`yicha ko`rsatish',
         'cat_selected': 0,
     }
     return render(request, 'mw_info/index.html', context=context)
